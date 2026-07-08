@@ -9,9 +9,19 @@ public class Main {
         bill1.addItem(saree, 2);
         bill1.printBill();
 
-        priya.addPurchase(bill1);
+        // Discount feature
+        bill1.applyDiscount(10);
+        bill1.printBill();
 
+        // Link bill to customer (loyalty points)
+        priya.addPurchase(bill1);
         System.out.println("Total spent: ₹" + priya.getTotalSpent());
         System.out.println("Loyalty points: " + priya.getLoyaltyPoints());
+
+        // Supplier class demo
+        Supplier supplier1 = new Supplier("SUP001", "Chennai Textiles", "9876500000", "chennai@textiles.com");
+        supplier1.addProduct("Red Silk Saree");
+        supplier1.addProduct("Blue Cotton Shirt");
+        supplier1.printSupplierDetails();
     }
 }

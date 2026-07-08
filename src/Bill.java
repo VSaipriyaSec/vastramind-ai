@@ -38,12 +38,17 @@ public class Bill {
         System.out.println("Customer: " + customerName + " (" + customerPhone + ")");
         for (BillItem item : items) {
             System.out.println(item.getProductName() + " x " + item.getQuantity() 
-                + " = ₹" + item.getSubtotal());
+                + " = rs" + item.getSubtotal());
         }
-        System.out.println("TOTAL: ₹" + totalAmount);
+        System.out.println("TOTAL: rs" + totalAmount);
     }
 
     public double getTotalAmount() {
         return totalAmount;
     }
+    public void applyDiscount(double percent) {
+       double discountAmount = totalAmount * (percent / 100);
+       totalAmount -= discountAmount;
+       System.out.println("Discount applied: " + percent + "%");
+   }
 }
