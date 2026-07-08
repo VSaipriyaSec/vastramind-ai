@@ -27,6 +27,15 @@ public class Product {
 
     public double getPrice() { return price; }
     public void setPrice(double price) { this.price = price; }
+    //updateprice
+    public void updatePrice(double newPrice, Employee employee) {
+    if (!employee.isOwner()) {
+        System.out.println("Access denied: Only owner can update price.");
+        return;
+    }
+    this.price = newPrice;
+    System.out.println("Price updated successfully by " + employee.getName());
+}
 
     public int getStockQuantity() { return stockQuantity; }
     public void setStockQuantity(int stockQuantity) { this.stockQuantity = stockQuantity; }
