@@ -23,5 +23,12 @@ public class Main {
         supplier1.addProduct("Red Silk Saree");
         supplier1.addProduct("Blue Cotton Shirt");
         supplier1.printSupplierDetails();
+
+        //employee
+        Employee owner = new Employee("EMP001", "Saipriya", "OWNER", "9876543210");
+        Employee staff = new Employee("EMP002", "Ramesh", "STAFF", "9876500001");
+
+        saree.updatePrice(3000.0, owner);
+        saree.updatePrice(3500.0, staff);
     }
 }
